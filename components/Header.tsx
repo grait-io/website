@@ -23,7 +23,11 @@ export default function Header() {
         <div className="flex justify-between items-center">
           {/* Logo */}
           <Link href={`/${lang}`} className="flex items-center">
-            <span className="text-2xl font-bold cyber-gradient-text">grait.io</span>
+            <img
+              src="/images/logo.png"
+              alt="grait.io logo"
+              className="h-28 w-auto"
+            />
           </Link>
           
           {/* Desktop Navigation */}
@@ -45,6 +49,21 @@ export default function Header() {
               className="text-white hover:text-cyber-blue transition-colors"
             >
               {t('nav.contact')}
+            </Link>
+            {/* TODO: Add actual links for Results and Why Us */}
+            <Link 
+              href={`/${lang}/#results`} // Placeholder link
+              className="text-white hover:text-cyber-blue transition-colors"
+            >
+              {/* Using hardcoded text until translations are added */}
+              {'Results'}
+            </Link>
+            <Link 
+              href={`/${lang}/#why-us`} // Placeholder link
+              className="text-white hover:text-cyber-blue transition-colors"
+            >
+              {/* Using hardcoded text until translations are added */}
+              {'Why Us'}
             </Link>
             
             {/* Language Switcher */}
@@ -79,7 +98,8 @@ export default function Header() {
               href={`/${lang}/contact`} 
               className="cyber-button text-sm"
             >
-              {t('common.contact_us')}
+              {/* Using hardcoded text until translations are added */}
+              {'Book Free AI Assessment'}
             </Link>
           </nav>
           
@@ -130,6 +150,23 @@ export default function Header() {
               >
                 {t('nav.contact')}
               </Link>
+              {/* TODO: Add actual links for Results and Why Us */}
+              <Link 
+                href={`/${lang}/#results`} // Placeholder link
+                className="text-white hover:text-cyber-blue transition-colors"
+                onClick={() => setMobileMenuOpen(false)}
+              >
+                {/* Using hardcoded text until translations are added */}
+                {'Results'}
+              </Link>
+              <Link 
+                href={`/${lang}/#why-us`} // Placeholder link
+                className="text-white hover:text-cyber-blue transition-colors"
+                onClick={() => setMobileMenuOpen(false)}
+              >
+                {/* Using hardcoded text until translations are added */}
+                {'Why Us'}
+              </Link>
               
               {/* Language Switcher */}
               <div className="flex space-x-4 pt-2 border-t border-cyber-blue/30">
@@ -151,7 +188,8 @@ export default function Header() {
                 className="cyber-button text-sm text-center mt-2"
                 onClick={() => setMobileMenuOpen(false)}
               >
-                {t('common.contact_us')}
+                {/* Using hardcoded text until translations are added */}
+                {'Book Free AI Assessment'}
               </Link>
             </div>
           </nav>

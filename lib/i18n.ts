@@ -32,25 +32,25 @@ export const translations: Translations = {
   },
   
   // Services
-  'services.ai_integration': {
-    en: 'AI Integration & Automation',
-    de: 'KI-Integration & Automatisierung',
-    it: 'Integrazione e automazione AI',
+  'services.ai_workflow': {
+    en: 'AI Workflow Design',
+    de: 'KI-Workflow-Design',
+    it: 'Design del flusso di lavoro AI',
   },
-  'services.ai_coaching': {
-    en: 'AI Coaching & Transformation',
-    de: 'KI-Coaching & Transformation',
-    it: 'Coaching e trasformazione AI',
+  'services.executive_mastery': {
+    en: 'Executive AI Mastery',
+    de: 'KI-Mastery für Führungskräfte',
+    it: 'Padronanza AI per Dirigenti',
   },
-  'services.product_development': {
-    en: 'Product & Service Development',
-    de: 'Produkt- & Serviceentwicklung',
-    it: 'Sviluppo di prodotti e servizi',
+  'services.product_launchpad': {
+    en: 'AI Product Launchpad',
+    de: 'KI-Produkt Launchpad',
+    it: 'Piattaforma di lancio prodotti AI',
   },
-  'services.workshops': {
-    en: 'Workshops & Education',
-    de: 'Workshops & Bildung',
-    it: 'Workshop e formazione',
+  'services.team_accelerator': {
+    en: 'Team AI Accelerator',
+    de: 'Team KI-Beschleuniger',
+    it: 'Acceleratore AI per Team',
   },
   
   // Locations
@@ -161,28 +161,28 @@ export function getAlternateLanguageUrls(path?: string): { [key: string]: string
   }, {} as { [key: string]: string });
 }
 
-// Function to get localized slugs
+  // Function to get localized slugs
 export function getLocalizedSlug(key: string, lang: string = defaultLanguage): string {
   const slugTranslations: { [key: string]: { [key: string]: string } } = {
-    'services.ai_integration': {
-      en: 'ai-integration',
-      de: 'ki-integration',
-      it: 'integrazione-ai',
+    'services.ai_workflow': {
+      en: 'ai-workflow-design',
+      de: 'ki-workflow-design',
+      it: 'design-flusso-lavoro-ai',
     },
-    'services.ai_coaching': {
-      en: 'ai-coaching',
-      de: 'ki-coaching',
-      it: 'coaching-ai',
+    'services.executive_mastery': {
+      en: 'executive-ai-mastery',
+      de: 'ki-mastery-fuehrungskraefte',
+      it: 'padronanza-ai-dirigenti',
     },
-    'services.product_development': {
-      en: 'product-development',
-      de: 'produktentwicklung',
-      it: 'sviluppo-prodotti',
+    'services.product_launchpad': {
+      en: 'ai-product-launchpad',
+      de: 'ki-produkt-launchpad',
+      it: 'piattaforma-lancio-prodotti-ai',
     },
-    'services.workshops': {
-      en: 'workshops',
-      de: 'workshops',
-      it: 'workshop',
+    'services.team_accelerator': {
+      en: 'team-ai-accelerator',
+      de: 'team-ki-beschleuniger',
+      it: 'acceleratore-ai-team',
     },
     'locations.germany': {
       en: 'germany',
@@ -227,24 +227,24 @@ export function getLocalizedSlug(key: string, lang: string = defaultLanguage): s
 // Service and location data
 export const services = [
   {
-    id: 'ai_integration',
-    translationKey: 'services.ai_integration',
-    icon: 'integration',
+    id: 'ai_workflow',
+    translationKey: 'services.ai_workflow',
+    icon: 'workflow',
   },
   {
-    id: 'ai_coaching',
-    translationKey: 'services.ai_coaching',
-    icon: 'coaching',
+    id: 'executive_mastery',
+    translationKey: 'services.executive_mastery',
+    icon: 'executive',
   },
   {
-    id: 'product_development',
-    translationKey: 'services.product_development',
+    id: 'product_launchpad',
+    translationKey: 'services.product_launchpad',
     icon: 'product',
   },
   {
-    id: 'workshops',
-    translationKey: 'services.workshops',
-    icon: 'workshop',
+    id: 'team_accelerator',
+    translationKey: 'services.team_accelerator',
+    icon: 'team',
   },
 ];
 
