@@ -8,16 +8,16 @@ export async function generateMetadata({ params }: { params: { lang: string } })
   const lang = supportedLanguages.includes(params.lang) ? params.lang : defaultLanguage;
   
   const title = lang === 'en' 
-    ? 'grait.io | AI Transformation Agency'
+    ? 'Future-Proof Your Business in 90 Days - No AI Expertise Required | grait.io'
     : lang === 'de'
-      ? 'grait.io | KI-Transformationsagentur'
-      : 'grait.io | Agenzia di Trasformazione AI';
+      ? 'Machen Sie Ihr Unternehmen in 90 Tagen zukunftssicher - Keine KI-Expertise erforderlich | grait.io'
+      : 'Rendi la tua azienda a prova di futuro in 90 giorni - Nessuna competenza AI richiesta | grait.io';
   
   const description = lang === 'en'
-    ? 'Premium AI integration and coaching agency for business transformation'
+    ? 'We implement customized AI systems so you can outpace competitors without becoming a tech expert. 72h implementation guarantee and 12-month ROI guarantee.'
     : lang === 'de'
-      ? 'Premium KI-Integrations- und Coaching-Agentur für Unternehmenstransformation'
-      : 'Agenzia premium di integrazione e coaching AI per la trasformazione aziendale';
+      ? 'Wir implementieren maßgeschneiderte KI-Systeme, damit Sie der Konkurrenz voraus sind, ohne ein Technikexperte zu werden. 72h-Implementierungsgarantie und 12-Monats-ROI-Garantie.'
+      : 'Implementiamo sistemi AI personalizzati così puoi superare i concorrenti senza diventare un esperto di tecnologia. Garanzia di implementazione in 72h e garanzia ROI di 12 mesi.';
   
   return {
     title,
@@ -27,9 +27,21 @@ export async function generateMetadata({ params }: { params: { lang: string } })
 
 // Hero section component
 function HeroSection({ lang }: { lang: string }) {
-  const title = getTranslation('home.hero.title', lang);
-  const subtitle = getTranslation('home.hero.subtitle', lang);
-  const ctaText = getTranslation('common.get_started', lang);
+  const title = lang === 'en'
+    ? "Future-Proof Your Business in 90 Days - No AI Expertise Required"
+    : lang === 'de'
+      ? "Zukunftssicher Ihr Unternehmen in 90 Tagen - Keine KI-Expertise erforderlich"
+      : "Rendi la tua azienda a prova di futuro in 90 giorni - Nessuna competenza AI richiesta";
+  const subtitle = lang === 'en'
+    ? "We implement customized AI systems so you can outpace competitors without becoming a tech expert"
+    : lang === 'de'
+      ? "Wir implementieren maßgeschneiderte KI-Systeme, damit Sie der Konkurrenz voraus sind, ohne ein Technikexperte zu werden"
+      : "Implementiamo sistemi AI personalizzati così puoi superare i concorrenti senza diventare un esperto di tecnologia";
+  const ctaText = lang === 'en'
+    ? "Book Free AI Readiness Assessment →"
+    : lang === 'de'
+      ? "Kostenlose KI-Bereitschaftsbewertung buchen →"
+      : "Prenota una valutazione gratuita di prontezza AI →";
   const learnMoreText = getTranslation('common.learn_more', lang);
   
   return (
@@ -42,21 +54,122 @@ function HeroSection({ lang }: { lang: string }) {
       </div>
       
       <div className="cyber-container relative z-10">
-        <div className="flex flex-col items-center text-center max-w-4xl mx-auto">
-          <h1 className="cyber-gradient-text text-5xl md:text-6xl lg:text-7xl font-bold mb-6">
-            {title}
-          </h1>
-          <p className="text-xl md:text-2xl text-gray-300 mb-10 max-w-3xl">
-            {subtitle}
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4">
-            <Link href={`/${lang}/contact`} className="cyber-button">
-              {ctaText}
-            </Link>
-            <Link href={`/${lang}/services`} className="border-2 border-cyber-blue px-6 py-3 text-white hover:bg-cyber-blue/10 transition-colors">
-              {learnMoreText}
-            </Link>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+          <div className="order-2 md:order-1 text-left">
+            <h1 className="cyber-gradient-text text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
+              {title}
+            </h1>
+            <p className="text-xl text-gray-300 mb-8 max-w-xl">
+              {subtitle}
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4">
+              <Link href={`/${lang}/contact`} className="cyber-button">
+                {ctaText}
+              </Link>
+              <Link href={`/${lang}/services`} className="border-2 border-cyber-blue px-6 py-3 text-white hover:bg-cyber-blue/10 transition-colors">
+                {learnMoreText}
+              </Link>
+            </div>
           </div>
+          <div className="order-1 md:order-2 flex justify-center mb-8 md:mb-0">
+            <div className="relative w-full max-w-md">
+              <div className="aspect-video bg-cyber-blue/10 border border-cyber-blue/30 rounded-sm p-1 transform -rotate-3">
+                <div className="w-full h-full bg-cyber-black/80 flex items-center justify-center">
+                  <span className="text-4xl">😓📊</span>
+                </div>
+              </div>
+              <div className="absolute -bottom-4 -right-4 w-2/3 aspect-video bg-cyber-purple/10 border border-cyber-purple/30 rounded-sm p-1 transform rotate-3">
+                <div className="w-full h-full bg-cyber-black/80 flex items-center justify-center">
+                  <span className="text-4xl">😎📈</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+// Core Value Proposition section component
+function ValuePropsSection({ lang }: { lang: string }): JSX.Element {
+  const valueProps = [
+    {
+      icon: '⚡',
+      title: lang === 'en'
+        ? '72h AI Implementation Guarantee'
+        : lang === 'de'
+          ? '72h KI-Implementierungsgarantie'
+          : 'Garanzia di implementazione AI in 72h',
+      description: lang === 'en'
+        ? 'We deliver working AI solutions within 3 business days or your money back'
+        : lang === 'de'
+          ? 'Wir liefern funktionierende KI-Lösungen innerhalb von 3 Werktagen oder Sie erhalten Ihr Geld zurück'
+          : 'Consegniamo soluzioni AI funzionanti entro 3 giorni lavorativi o rimborsiamo'
+    },
+    {
+      icon: '🚫🤖',
+      title: lang === 'en'
+        ? 'Zero Technical Jargon Policy'
+        : lang === 'de'
+          ? 'Kein Technik-Jargon'
+          : 'Niente gergo tecnico',
+      description: lang === 'en'
+        ? 'We explain everything in plain business terms you can understand'
+        : lang === 'de'
+          ? 'Wir erklären alles in einfachen Geschäftsbedingungen, die Sie verstehen können'
+          : 'Spieghiamo tutto in termini aziendali semplici che puoi capire'
+    },
+    {
+      icon: '📈',
+      title: lang === 'en'
+        ? '12-Month Future-Proof ROI Guarantee'
+        : lang === 'de'
+          ? '12-Monats-Zukunftssichere ROI-Garantie'
+          : 'Garanzia ROI a prova di futuro di 12 mesi',
+      description: lang === 'en'
+        ? 'We guarantee measurable results or we\'ll work for free until you get them'
+        : lang === 'de'
+          ? 'Wir garantieren messbare Ergebnisse oder arbeiten kostenlos, bis Sie sie erhalten'
+          : 'Garantiamo risultati misurabili o lavoriamo gratuitamente finché non li ottieni'
+    },
+    {
+      icon: '✨',
+      title: lang === 'en'
+        ? '24/7 White-Glove Support'
+        : lang === 'de'
+          ? '24/7 Premium-Support'
+          : 'Supporto premium 24/7',
+      description: lang === 'en'
+        ? 'Dedicated account manager and priority support whenever you need it'
+        : lang === 'de'
+          ? 'Dedizierter Account-Manager und Prioritäts-Support, wann immer Sie ihn benötigen'
+          : 'Account manager dedicato e supporto prioritario ogni volta che ne hai bisogno'
+    }
+  ];
+
+  return (
+    <section className="py-20 bg-cyber-darkgray" id="why-us">
+      <div className="cyber-container">
+        <div className="text-center mb-16">
+          <h2 className="text-4xl font-bold mb-4">
+            <span className="cyber-gradient-text">
+              {lang === 'en' 
+                ? 'Why 327 Founders Chose Us Last Quarter' 
+                : lang === 'de'
+                  ? 'Warum 327 Gründer uns im letzten Quartal gewählt haben'
+                  : 'Perché 327 fondatori ci hanno scelto nell\'ultimo trimestre'}
+            </span>
+          </h2>
+        </div>
+        
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          {valueProps.map((prop, index) => (
+            <div key={index} className="cyber-card">
+              <div className="text-4xl mb-4">{prop.icon}</div>
+              <h3 className="text-xl font-bold mb-3 text-white">{prop.title}</h3>
+              <p className="text-gray-300">{prop.description}</p>
+            </div>
+          ))}
         </div>
       </div>
     </section>
@@ -67,44 +180,44 @@ function HeroSection({ lang }: { lang: string }) {
 function ServicesSection({ lang }: { lang: string }) {
   const services = [
     {
-      id: 'ai_integration',
-      title: getTranslation('services.ai_integration', lang),
-      description: lang === 'en' 
-        ? 'Seamlessly integrate AI into your existing workflows and systems'
+      id: 'ai_workflow',
+      title: getTranslation('services.ai_workflow', lang),
+      description: lang === 'en'
+        ? 'Automate 53% of repetitive tasks in your first month'
         : lang === 'de'
-          ? 'Integrieren Sie KI nahtlos in Ihre bestehenden Arbeitsabläufe und Systeme'
-          : 'Integra perfettamente l\'AI nei tuoi flussi di lavoro e sistemi esistenti',
-      icon: '🔄',
+          ? 'Automatisieren Sie 53% der sich wiederholenden Aufgaben in Ihrem ersten Monat'
+          : 'Automatizza il 53% delle attività ripetitive nel tuo primo mese',
+      icon: '💰',
     },
     {
-      id: 'ai_coaching',
-      title: getTranslation('services.ai_coaching', lang),
+      id: 'executive_mastery',
+      title: getTranslation('services.executive_mastery', lang),
       description: lang === 'en'
-        ? 'Expert guidance to transform your business with AI technologies'
+        ? 'Become an AI-driven leader in 6 weeks'
         : lang === 'de'
-          ? 'Fachkundige Anleitung zur Transformation Ihres Unternehmens mit KI-Technologien'
-          : 'Guida esperta per trasformare la tua azienda con le tecnologie AI',
-      icon: '🧠',
+          ? 'Werden Sie in 6 Wochen ein KI-gesteuerter Leader'
+          : 'Diventa un leader guidato dall\'AI in 6 settimane',
+      icon: '🚀',
     },
     {
-      id: 'product_development',
-      title: getTranslation('services.product_development', lang),
+      id: 'product_launchpad',
+      title: getTranslation('services.product_launchpad', lang),
       description: lang === 'en'
-        ? 'Develop innovative AI-powered products and services'
+        ? 'Turn your ideas into revenue-generating AI tools'
         : lang === 'de'
-          ? 'Entwickeln Sie innovative KI-gestützte Produkte und Dienstleistungen'
-          : 'Sviluppa prodotti e servizi innovativi basati sull\'AI',
-      icon: '⚙️',
+          ? 'Verwandeln Sie Ihre Ideen in umsatzgenerierende KI-Tools'
+          : 'Trasforma le tue idee in strumenti AI che generano entrate',
+      icon: '📱',
     },
     {
-      id: 'workshops',
-      title: getTranslation('services.workshops', lang),
+      id: 'team_accelerator',
+      title: getTranslation('services.team_accelerator', lang),
       description: lang === 'en'
-        ? 'Hands-on workshops and training for your team'
+        ? 'Make your entire team 3x more productive'
         : lang === 'de'
-          ? 'Praktische Workshops und Schulungen für Ihr Team'
-          : 'Workshop pratici e formazione per il tuo team',
-      icon: '📚',
+          ? 'Machen Sie Ihr gesamtes Team 3x produktiver'
+          : 'Rendi il tuo intero team 3 volte più produttivo',
+      icon: '📈',
     },
   ];
   
@@ -162,28 +275,60 @@ function ServicesSection({ lang }: { lang: string }) {
 // About section component
 function AboutSection({ lang }: { lang: string }) {
   return (
-    <section className="py-20 bg-gradient-to-b from-cyber-black to-cyber-darkgray">
+    <section className="py-20 bg-gradient-to-b from-cyber-black to-cyber-darkgray" id="why-us">
       <div className="cyber-container">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <div>
             <h2 className="text-4xl font-bold mb-6">
               <span className="cyber-gradient-text">
-                {lang === 'en' ? 'About grait.io' : lang === 'de' ? 'Über grait.io' : 'Chi è grait.io'}
+                {lang === 'en' ? 'We Speak Your Language: Business Growth, Not Tech Talk' : 
+                 lang === 'de' ? 'Wir sprechen Ihre Sprache: Geschäftswachstum, nicht Tech-Talk' : 
+                 'Parliamo la tua lingua: crescita aziendale, non gergo tecnico'}
               </span>
             </h2>
             <p className="text-xl text-gray-300 mb-6">
               {lang === 'en' 
-                ? 'We are a premium AI transformation agency helping businesses leverage the power of artificial intelligence.'
+                ? 'As former founders ourselves, we know you need solutions - not science projects.'
                 : lang === 'de'
-                  ? 'Wir sind eine Premium-KI-Transformationsagentur, die Unternehmen hilft, die Kraft der künstlichen Intelligenz zu nutzen.'
-                  : 'Siamo un\'agenzia premium di trasformazione AI che aiuta le aziende a sfruttare la potenza dell\'intelligenza artificiale.'}
+                  ? 'Als ehemalige Gründer selbst wissen wir, dass Sie Lösungen brauchen - keine Wissenschaftsprojekte.'
+                  : 'Come ex fondatori, sappiamo che hai bisogno di soluzioni, non di progetti scientifici.'}
             </p>
-            <p className="text-gray-300 mb-8">
+            <p className="text-gray-300 mb-4">
               {lang === 'en'
-                ? 'Our team of experts combines deep technical knowledge with business acumen to deliver tailored AI solutions that drive real results. We believe in empowering creators and businesses with the tools they need to thrive in the AI-driven future.'
+                ? 'Our 3-step process:'
                 : lang === 'de'
-                  ? 'Unser Expertenteam kombiniert tiefes technisches Wissen mit unternehmerischem Scharfsinn, um maßgeschneiderte KI-Lösungen zu liefern, die echte Ergebnisse erzielen. Wir glauben daran, Kreative und Unternehmen mit den Werkzeugen auszustatten, die sie benötigen, um in der KI-gesteuerten Zukunft zu gedeihen.'
-                  : 'Il nostro team di esperti combina profonde conoscenze tecniche con acume aziendale per fornire soluzioni AI su misura che producono risultati reali. Crediamo nell\'empowerment di creatori e aziende con gli strumenti di cui hanno bisogno per prosperare nel futuro guidato dall\'AI.'}
+                  ? 'Unser 3-Schritte-Prozess:'
+                  : 'Il nostro processo in 3 fasi:'}
+            </p>
+            <ul className="list-disc list-inside text-gray-300 mb-8 space-y-2">
+              <li>
+                {lang === 'en'
+                  ? 'Translate your business goals into AI requirements'
+                  : lang === 'de'
+                    ? 'Übersetzen Ihrer Geschäftsziele in KI-Anforderungen'
+                    : 'Traduciamo i tuoi obiettivi aziendali in requisiti AI'}
+              </li>
+              <li>
+                {lang === 'en'
+                  ? 'Implement while you focus on core operations'
+                  : lang === 'de'
+                    ? 'Implementieren, während Sie sich auf Kernoperationen konzentrieren'
+                    : 'Implementiamo mentre ti concentri sulle operazioni principali'}
+              </li>
+              <li>
+                {lang === 'en'
+                  ? 'Maintain systems so you stay ahead of competitors'
+                  : lang === 'de'
+                    ? 'Systeme warten, damit Sie der Konkurrenz voraus bleiben'
+                    : 'Manteniamo i sistemi in modo che tu rimanga un passo avanti rispetto ai concorrenti'}
+              </li>
+            </ul>
+            <p className="text-gray-300 mb-8 font-bold">
+              {lang === 'en'
+                ? 'No PhDs needed – just measurable results.'
+                : lang === 'de'
+                  ? 'Keine Doktortitel nötig - nur messbare Ergebnisse.'
+                  : 'Non servono PhD - solo risultati misurabili.'}
             </p>
             <Link 
               href={`/${lang}/contact`} 
@@ -211,39 +356,39 @@ function AboutSection({ lang }: { lang: string }) {
 }
 
 // Testimonials section component
-function TestimonialsSection({ lang }: { lang: string }) {
+function TestimonialsSection({ lang }: { lang: string; id?: string }) {
   const testimonials = [
     {
       quote: lang === 'en'
-        ? "grait.io transformed our business with their AI integration services. We've seen a 40% increase in efficiency."
+        ? "I thought AI was for tech bros - grAIt.io gave me a 30% revenue boost without me touching a single line of code"
         : lang === 'de'
-          ? "grait.io hat unser Unternehmen mit ihren KI-Integrationsdiensten transformiert. Wir haben eine 40%ige Steigerung der Effizienz gesehen."
-          : "grait.io ha trasformato la nostra azienda con i loro servizi di integrazione AI. Abbiamo visto un aumento del 40% dell'efficienza.",
-      author: "Sarah Johnson",
-      company: "TechCorp Inc.",
+          ? "Ich dachte, KI wäre etwas für Tech-Experten - grAIt.io hat mir einen 30%igen Umsatzschub beschert, ohne dass ich eine einzige Codezeile anfassen musste"
+          : "Pensavo che l'AI fosse solo per esperti di tecnologia - grAIt.io mi ha dato un aumento del 30% delle entrate senza che toccassi una sola riga di codice",
+      author: "Maria L.",
+      company: lang === 'en' ? "Fashion E-Commerce Founder" : lang === 'de' ? "Gründerin eines Mode-E-Commerce" : "Fondatrice di E-Commerce di Moda",
     },
     {
       quote: lang === 'en'
-        ? "The AI coaching program provided by grait.io gave our team the skills we needed to innovate in our industry."
+        ? "Finally an agency that speaks business, not binary! We automated 140 staff hours/month in Week 1"
         : lang === 'de'
-          ? "Das von grait.io angebotene KI-Coaching-Programm hat unserem Team die Fähigkeiten vermittelt, die wir für Innovationen in unserer Branche benötigten."
-          : "Il programma di coaching AI fornito da grait.io ha dato al nostro team le competenze necessarie per innovare nel nostro settore.",
-      author: "Michael Chen",
-      company: "Innovate Solutions",
+          ? "Endlich eine Agentur, die Geschäfts- und nicht Binärsprache spricht! Wir haben in der ersten Woche 140 Arbeitsstunden/Monat automatisiert"
+          : "Finalmente un'agenzia che parla la lingua degli affari, non il binario! Abbiamo automatizzato 140 ore di lavoro/mese nella prima settimana",
+      author: "James R.",
+      company: lang === 'en' ? "Restaurant Chain Owner" : lang === 'de' ? "Besitzer einer Restaurantkette" : "Proprietario di Catena di Ristoranti",
     },
     {
       quote: lang === 'en'
-        ? "Working with grait.io on our product development was a game-changer. Their expertise in AI is unmatched."
+        ? "From overwhelmed to AI-powered in 3 weeks. They translated everything into terms I could understand as a non-technical founder"
         : lang === 'de'
-          ? "Die Zusammenarbeit mit grait.io bei unserer Produktentwicklung war ein Wendepunkt. Ihre Expertise in KI ist unübertroffen."
-          : "Lavorare con grait.io sul nostro sviluppo di prodotti è stato rivoluzionario. La loro competenza in AI è impareggiabile.",
-      author: "Elena Rodriguez",
-      company: "Future Systems",
+          ? "Von überfordert zu KI-gestützt in 3 Wochen. Sie haben alles in Begriffe übersetzt, die ich als nicht-technischer Gründer verstehen konnte"
+          : "Da sopraffatto a potenziato dall'AI in 3 settimane. Hanno tradotto tutto in termini che potevo capire come fondatore non tecnico",
+      author: "David K.",
+      company: lang === 'en' ? "Consulting Firm Owner" : lang === 'de' ? "Inhaber einer Beratungsfirma" : "Proprietario di Società di Consulenza",
     },
   ];
   
   return (
-    <section className="py-20 bg-cyber-black">
+    <section className="py-20 bg-cyber-black" id="results">
       <div className="cyber-container">
         <div className="text-center mb-16">
           <h2 className="text-4xl font-bold mb-4">
@@ -284,18 +429,25 @@ function CtaSection({ lang }: { lang: string }) {
           <h2 className="text-4xl font-bold mb-6">
             <span className="cyber-gradient-text">
               {lang === 'en' 
-                ? 'Ready to Transform Your Business with AI?' 
+                ? 'Ready to Future-Proof Your Business?' 
                 : lang === 'de' 
-                  ? 'Bereit, Ihr Unternehmen mit KI zu transformieren?' 
-                  : 'Pronto a trasformare la tua azienda con l\'AI?'}
+                  ? 'Bereit, Ihr Unternehmen zukunftssicher zu machen?' 
+                  : 'Pronto a rendere la tua azienda a prova di futuro?'}
             </span>
           </h2>
-          <p className="text-xl text-gray-300 mb-10">
+          <p className="text-xl text-gray-300 mb-6">
             {lang === 'en'
-              ? 'Contact us today to discover how our AI solutions can help you stay ahead of the competition.'
+              ? 'Book your free AI Readiness Assessment today.'
               : lang === 'de'
-                ? 'Kontaktieren Sie uns noch heute, um zu erfahren, wie unsere KI-Lösungen Ihnen helfen können, der Konkurrenz einen Schritt voraus zu sein.'
-                : 'Contattaci oggi per scoprire come le nostre soluzioni AI possono aiutarti a rimanere un passo avanti rispetto alla concorrenza.'}
+                ? 'Buchen Sie noch heute Ihre kostenlose KI-Bereitschaftsbewertung.'
+                : 'Prenota oggi la tua valutazione gratuita di prontezza all\'AI.'}
+          </p>
+          <p className="text-lg text-cyber-blue mb-10">
+            {lang === 'en'
+              ? 'Only 3 spots left this week!'
+              : lang === 'de'
+                ? 'Nur noch 3 Plätze diese Woche!'
+                : 'Solo 3 posti rimasti questa settimana!'}
           </p>
           <Link 
             href={`/${lang}/contact`} 
@@ -316,9 +468,10 @@ export default function HomePage({ params }: { params: { lang: string } }) {
   return (
     <>
       <HeroSection lang={lang} />
+      <ValuePropsSection lang={lang} />
       <ServicesSection lang={lang} />
-      <AboutSection lang={lang} />
       <TestimonialsSection lang={lang} />
+      <AboutSection lang={lang} />
       <CtaSection lang={lang} />
     </>
   );
