@@ -187,8 +187,26 @@ export default function ServiceLocationPage({
   const serviceTitle = getTranslation(service.translationKey, validLang);
   const locationTitle = getTranslation(location.translationKey, validLang);
   
+  // Type definitions
+  type ServiceContent = {
+    icon: string;
+    image: string;
+    useCases: { en: string[]; de: string[]; it: string[] };
+    benefits: { en: string[]; de: string[]; it: string[] };
+  };
+
+  type ContentByServiceAndLocation = {
+    [serviceId: string]: {
+      germany: ServiceContent;
+      italy?: ServiceContent;
+      uk?: ServiceContent;
+      us?: ServiceContent;
+      spain?: ServiceContent;
+    };
+  };
+
   // Service + Location specific content
-  const contentByServiceAndLocation = {
+  const contentByServiceAndLocation: ContentByServiceAndLocation = {
     ai_integration: {
       germany: {
         icon: '🔄',
@@ -399,7 +417,11 @@ export default function ServiceLocationPage({
   };
   
   // Get content for this specific combination, or use default
-  const specificContent = contentByServiceAndLocation[id as keyof typeof contentByServiceAndLocation]?.[locationId as keyof (typeof contentByServiceAndLocation)['ai_integration']];
+  const specificContent =
+    id in contentByServiceAndLocation &&
+    locationId in contentByServiceAndLocation[id]
+      ? contentByServiceAndLocation[id][locationId as 'germany' | 'italy' | 'uk' | 'us' | 'spain']
+      : null;
   
   const content = {
     icon: specificContent?.icon || (service.icon || '🔧'),
