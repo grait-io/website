@@ -25,39 +25,6 @@ export async function generateMetadata({ params }: { params: { lang: string } })
   };
 }
 
-// Service card component
-function ServiceCard({ 
-  id, 
-  title, 
-  description, 
-  icon, 
-  lang 
-}: { 
-  id: string; 
-  title: string; 
-  description: string; 
-  icon: string;
-  lang: string;
-}) {
-  return (
-    <div className="cyber-card group hover:border-cyber-purple transition-colors duration-300">
-      <div className="text-5xl mb-6">{icon}</div>
-      <h3 className="text-2xl font-bold mb-4 text-white group-hover:text-cyber-blue transition-colors">
-        {title}
-      </h3>
-      <p className="text-gray-300 mb-6">
-        {description}
-      </p>
-      <Link 
-        href={`/${lang}/services/${id}`} 
-        className="cyber-button inline-block"
-      >
-        {getTranslation('common.learn_more', lang)}
-      </Link>
-    </div>
-  );
-}
-
 // Main services page component
 export default function ServicesPage({ params }: { params: { lang: string } }) {
   const lang = supportedLanguages.includes(params.lang) ? params.lang : defaultLanguage;

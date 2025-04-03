@@ -2,6 +2,7 @@
 
 import React, { useState } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { useLanguage } from './LanguageProvider';
 import { getAlternateLanguageUrls } from '@/lib/i18n';
 import { usePathname } from 'next/navigation';
@@ -23,10 +24,13 @@ export default function Header() {
         <div className="flex justify-between items-center">
           {/* Logo */}
           <Link href={`/${lang}`} className="flex items-center">
-            <img
+            <Image
               src="/images/logo.png"
               alt="grait.io logo"
+              width={112} // Approximate width for h-28 (28 * 4 = 112)
+              height={112} // Same as width for square logo
               className="h-28 w-auto"
+              priority
             />
           </Link>
           
