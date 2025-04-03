@@ -39,33 +39,33 @@ export async function generateMetadata({
   
   const locationTitle = getTranslation(location.translationKey, validLang);
   
-  const title = `${locationTitle} | grait.io`;
+  const title = `AI for ${locationTitle} Businesses - No Technical Expertise Required | grait.io`;
   
   const descriptions = {
     germany: {
-      en: 'AI transformation services in Germany specializing in manufacturing and industrial automation.',
-      de: 'KI-Transformationsdienste in Deutschland, spezialisiert auf Fertigung und industrielle Automatisierung.',
-      it: 'Servizi di trasformazione AI in Germania specializzati in produzione e automazione industriale.',
+      en: 'Future-proof your German business in 90 days - no AI expertise required. 72h implementation guarantee and 12-month ROI guarantee for manufacturing and industrial companies.',
+      de: 'Machen Sie Ihr deutsches Unternehmen in 90 Tagen zukunftssicher - keine KI-Expertise erforderlich. 72-Stunden-Implementierungsgarantie und 12-Monats-ROI-Garantie für Fertigungs- und Industrieunternehmen.',
+      it: 'Rendi la tua azienda tedesca a prova di futuro in 90 giorni - nessuna competenza AI richiesta. Garanzia di implementazione in 72 ore e garanzia ROI di 12 mesi per aziende manifatturiere e industriali.',
     },
     italy: {
-      en: 'AI solutions in Italy focusing on design, fashion, and creative industries.',
-      de: 'KI-Lösungen in Italien mit Fokus auf Design, Mode und Kreativbranchen.',
-      it: 'Soluzioni AI in Italia focalizzate su design, moda e industrie creative.',
+      en: 'AI for Italian Excellence: Automate La Dolce Vita. Specialized solutions for design, fashion, and luxury brands with no technical jargon.',
+      de: 'KI für italienische Exzellenz: Automatisieren Sie La Dolce Vita. Spezialisierte Lösungen für Design, Mode und Luxusmarken ohne technischen Fachjargon.',
+      it: 'AI per l\'Eccellenza Italiana: Automatizza La Dolce Vita. Soluzioni specializzate per design, moda e marchi di lusso senza gergo tecnico.',
     },
     uk: {
-      en: 'AI transformation services in the UK for financial services and healthcare sectors.',
-      de: 'KI-Transformationsdienste in Großbritannien für Finanzdienstleistungen und Gesundheitssektoren.',
-      it: 'Servizi di trasformazione AI nel Regno Unito per i settori dei servizi finanziari e sanitari.',
+      en: 'Transform your UK business with AI - no coding required. Specialized solutions for financial services and healthcare with measurable ROI in 30 days.',
+      de: 'Transformieren Sie Ihr britisches Unternehmen mit KI - keine Programmierung erforderlich. Spezialisierte Lösungen für Finanzdienstleistungen und Gesundheitswesen mit messbarem ROI in 30 Tagen.',
+      it: 'Trasforma la tua azienda britannica con l\'AI - nessuna programmazione richiesta. Soluzioni specializzate per servizi finanziari e sanitari con ROI misurabile in 30 giorni.',
     },
     us: {
-      en: 'AI coaching and product development in the US for tech startups and enterprises.',
-      de: 'KI-Coaching und Produktentwicklung in den USA für Tech-Startups und Unternehmen.',
-      it: 'Coaching AI e sviluppo di prodotti negli Stati Uniti per startup tecnologiche e imprese.',
+      en: 'Make your US business 3x more productive with AI - no tech skills needed. Specialized solutions for tech startups and enterprises with 12.6x average first-year ROI.',
+      de: 'Machen Sie Ihr US-Unternehmen mit KI 3x produktiver - keine technischen Kenntnisse erforderlich. Spezialisierte Lösungen für Tech-Startups und Unternehmen mit durchschnittlich 12,6-fachem ROI im ersten Jahr.',
+      it: 'Rendi la tua azienda statunitense 3 volte più produttiva con l\'AI - nessuna competenza tecnica necessaria. Soluzioni specializzate per startup tecnologiche e imprese con ROI medio di 12,6 volte nel primo anno.',
     },
     spain: {
-      en: 'AI workshops and education in Spain for businesses across various sectors.',
-      de: 'KI-Workshops und Bildung in Spanien für Unternehmen verschiedener Branchen.',
-      it: 'Workshop e formazione AI in Spagna per aziende di vari settori.',
+      en: 'Future-proof your Spanish business with AI - no technical expertise required. Specialized solutions for tourism, retail and education with 72h implementation guarantee.',
+      de: 'Machen Sie Ihr spanisches Unternehmen mit KI zukunftssicher - keine technische Expertise erforderlich. Spezialisierte Lösungen für Tourismus, Einzelhandel und Bildung mit 72-Stunden-Implementierungsgarantie.',
+      it: 'Rendi la tua azienda spagnola a prova di futuro con l\'AI - nessuna competenza tecnica richiesta. Soluzioni specializzate per turismo, vendita al dettaglio e istruzione con garanzia di implementazione in 72 ore.',
     },
   };
   
@@ -254,28 +254,92 @@ export default function LocationPage({
     germany: {
       image: '🇩🇪',
       description: {
-        en: 'Our German team specializes in AI integration for manufacturing and industrial automation, helping businesses across Germany leverage artificial intelligence to enhance productivity, quality, and innovation in their operations.',
-        de: 'Unser deutsches Team ist spezialisiert auf KI-Integration für Fertigung und industrielle Automatisierung und hilft Unternehmen in ganz Deutschland, künstliche Intelligenz zu nutzen, um Produktivität, Qualität und Innovation in ihren Betrieben zu verbessern.',
-        it: 'Il nostro team tedesco è specializzato nell\'integrazione AI per la produzione e l\'automazione industriale, aiutando le aziende in tutta la Germania a sfruttare l\'intelligenza artificiale per migliorare produttività, qualità e innovazione nelle loro operazioni.',
+        en: 'Our German team helps manufacturing and industrial businesses automate repetitive tasks and boost productivity without requiring any technical expertise from you. We speak your business language, not tech jargon, and deliver measurable results in 72 hours.',
+        de: 'Unser deutsches Team hilft Fertigungs- und Industrieunternehmen, repetitive Aufgaben zu automatisieren und die Produktivität zu steigern, ohne dass Sie technisches Fachwissen benötigen. Wir sprechen Ihre Geschäftssprache, nicht Tech-Jargon, und liefern messbare Ergebnisse in 72 Stunden.',
+        it: 'Il nostro team tedesco aiuta le aziende manifatturiere e industriali ad automatizzare le attività ripetitive e aumentare la produttività senza richiedere alcuna competenza tecnica da parte tua. Parliamo il tuo linguaggio aziendale, non il gergo tecnico, e forniamo risultati misurabili in 72 ore.',
       },
       industries: {
         en: ['Manufacturing', 'Automotive', 'Industrial Automation', 'Engineering', 'Logistics'],
         de: ['Fertigung', 'Automobilindustrie', 'Industrielle Automatisierung', 'Ingenieurwesen', 'Logistik'],
         it: ['Produzione', 'Automotive', 'Automazione industriale', 'Ingegneria', 'Logistica'],
       },
+      caseStudy: {
+        en: {
+          title: 'German Manufacturing Success Story',
+          company: 'Precision Auto Parts GmbH',
+          results: [
+            '47% reduction in quality control costs',
+            '83% faster production planning',
+            '12.6x ROI in first year',
+            'Implementation completed in just 14 days'
+          ]
+        },
+        de: {
+          title: 'Deutsche Fertigungserfolgsgeschichte',
+          company: 'Präzisions-Autoteile GmbH',
+          results: [
+            '47% Reduzierung der Qualitätskontrollkosten',
+            '83% schnellere Produktionsplanung',
+            '12,6x ROI im ersten Jahr',
+            'Implementierung in nur 14 Tagen abgeschlossen'
+          ]
+        },
+        it: {
+          title: 'Storia di successo nella produzione tedesca',
+          company: 'Precision Auto Parts GmbH',
+          results: [
+            'Riduzione del 47% dei costi di controllo qualità',
+            'Pianificazione della produzione più veloce dell\'83%',
+            '12,6x ROI nel primo anno',
+            'Implementazione completata in soli 14 giorni'
+          ]
+        }
+      }
     },
     italy: {
       image: '🇮🇹',
       description: {
-        en: 'Our Italian office focuses on AI solutions for design, fashion, and creative industries, bringing cutting-edge artificial intelligence capabilities to Italy\'s renowned creative and cultural sectors.',
-        de: 'Unser italienisches Büro konzentriert sich auf KI-Lösungen für Design, Mode und Kreativbranchen und bringt modernste künstliche Intelligenzfähigkeiten in Italiens renommierte Kreativ- und Kultursektoren.',
-        it: 'Il nostro ufficio italiano si concentra su soluzioni AI per design, moda e industrie creative, portando capacità di intelligenza artificiale all\'avanguardia nei rinomati settori creativi e culturali dell\'Italia.',
+        en: 'Our Italian team specializes in AI for luxury brands, fashion houses, and creative studios. We integrate with Italian accounting systems (Fatture in Cloud, TeamSystem), comply with local regulations, and have native Italian-speaking AI experts who understand your business needs.',
+        de: 'Unser italienisches Team ist spezialisiert auf KI für Luxusmarken, Modehäuser und Kreativstudios. Wir integrieren mit italienischen Buchhaltungssystemen (Fatture in Cloud, TeamSystem), entsprechen den lokalen Vorschriften und haben italienischsprachige KI-Experten, die Ihre Geschäftsanforderungen verstehen.',
+        it: 'Il nostro team italiano è specializzato in AI per marchi di lusso, case di moda e studi creativi. Ci integriamo con i sistemi di contabilità italiani (Fatture in Cloud, TeamSystem), rispettiamo le normative locali e abbiamo esperti AI di madrelingua italiana che comprendono le tue esigenze aziendali.',
       },
       industries: {
         en: ['Fashion', 'Design', 'Luxury Goods', 'Creative Arts', 'Cultural Institutions'],
         de: ['Mode', 'Design', 'Luxusgüter', 'Kreative Künste', 'Kulturelle Einrichtungen'],
         it: ['Moda', 'Design', 'Beni di lusso', 'Arti creative', 'Istituzioni culturali'],
       },
+      caseStudy: {
+        en: {
+          title: 'Italian Luxury Brand Success Story',
+          company: 'Milano Leather Goods',
+          results: [
+            'Automated 80% of custom order processing',
+            'Reduced customer service costs by €12k/month',
+            'Implemented in 14 days during peak season',
+            'Zero disruption to existing operations'
+          ]
+        },
+        de: {
+          title: 'Erfolgsgeschichte einer italienischen Luxusmarke',
+          company: 'Milano Leather Goods',
+          results: [
+            'Automatisierung von 80% der Bearbeitung von Sonderanfertigungen',
+            'Reduzierung der Kundendienstkosten um 12.000 €/Monat',
+            'Implementierung in 14 Tagen während der Hochsaison',
+            'Keine Unterbrechung der bestehenden Abläufe'
+          ]
+        },
+        it: {
+          title: 'Storia di successo di un marchio di lusso italiano',
+          company: 'Milano Leather Goods',
+          results: [
+            'Automatizzato l\'80% dell\'elaborazione degli ordini personalizzati',
+            'Riduzione dei costi del servizio clienti di €12k/mese',
+            'Implementato in 14 giorni durante l\'alta stagione',
+            'Zero interruzioni alle operazioni esistenti'
+          ]
+        }
+      }
     },
     uk: {
       image: '🇬🇧',
@@ -289,6 +353,38 @@ export default function LocationPage({
         de: ['Finanzdienstleistungen', 'Gesundheitswesen', 'Versicherungen', 'Öffentlicher Sektor', 'Bildung'],
         it: ['Servizi finanziari', 'Sanità', 'Assicurazioni', 'Settore pubblico', 'Istruzione'],
       },
+      caseStudy: {
+        en: {
+          title: 'UK Financial Services Success Story',
+          company: 'London Investment Group',
+          results: [
+            '83% faster client onboarding process',
+            '£240,000 annual cost savings',
+            'Regulatory compliance improved by 95%',
+            'Implementation completed in 21 days'
+          ]
+        },
+        de: {
+          title: 'Erfolgsgeschichte britischer Finanzdienstleistungen',
+          company: 'London Investment Group',
+          results: [
+            '83% schnellerer Kundenonboarding-Prozess',
+            '£240.000 jährliche Kosteneinsparungen',
+            'Verbesserung der regulatorischen Compliance um 95%',
+            'Implementierung in 21 Tagen abgeschlossen'
+          ]
+        },
+        it: {
+          title: 'Storia di successo dei servizi finanziari britannici',
+          company: 'London Investment Group',
+          results: [
+            'Processo di onboarding dei clienti più veloce dell\'83%',
+            'Risparmi annuali di £240.000',
+            'Conformità normativa migliorata del 95%',
+            'Implementazione completata in 21 giorni'
+          ]
+        }
+      }
     },
     us: {
       image: '🇺🇸',
@@ -302,6 +398,38 @@ export default function LocationPage({
         de: ['Technologie', 'Software', 'E-Commerce', 'Medien', 'Telekommunikation'],
         it: ['Tecnologia', 'Software', 'E-commerce', 'Media', 'Telecomunicazioni'],
       },
+      caseStudy: {
+        en: {
+          title: 'US Tech Startup Success Story',
+          company: 'InnovateTech Solutions',
+          results: [
+            'Reduced development time by 68%',
+            'Increased customer acquisition by 3.5x',
+            '$1.2M in additional revenue first year',
+            'Scaled team productivity without adding headcount'
+          ]
+        },
+        de: {
+          title: 'Erfolgsgeschichte eines US-Tech-Startups',
+          company: 'InnovateTech Solutions',
+          results: [
+            'Reduzierung der Entwicklungszeit um 68%',
+            '3,5-fache Steigerung der Kundenakquise',
+            '1,2 Mio. $ zusätzlicher Umsatz im ersten Jahr',
+            'Skalierte Teamproduktivität ohne zusätzliche Mitarbeiter'
+          ]
+        },
+        it: {
+          title: 'Storia di successo di una startup tecnologica statunitense',
+          company: 'InnovateTech Solutions',
+          results: [
+            'Tempo di sviluppo ridotto del 68%',
+            'Acquisizione clienti aumentata di 3,5 volte',
+            '1,2 milioni di $ di entrate aggiuntive nel primo anno',
+            'Produttività del team scalata senza aggiungere personale'
+          ]
+        }
+      }
     },
     spain: {
       image: '🇪🇸',
@@ -315,6 +443,38 @@ export default function LocationPage({
         de: ['Bildung', 'Tourismus', 'Einzelhandel', 'Landwirtschaft', 'Energie'],
         it: ['Istruzione', 'Turismo', 'Vendita al dettaglio', 'Agricoltura', 'Energia'],
       },
+      caseStudy: {
+        en: {
+          title: 'Spanish Tourism Success Story',
+          company: 'Barcelona Hospitality Group',
+          results: [
+            '42% increase in booking conversions',
+            '€8,500 monthly savings in operational costs',
+            'Customer satisfaction improved by 37%',
+            'Staff training completed in just 10 days'
+          ]
+        },
+        de: {
+          title: 'Erfolgsgeschichte im spanischen Tourismus',
+          company: 'Barcelona Hospitality Group',
+          results: [
+            '42% Steigerung der Buchungskonversionen',
+            '€8.500 monatliche Einsparungen bei Betriebskosten',
+            'Kundenzufriedenheit um 37% verbessert',
+            'Mitarbeiterschulung in nur 10 Tagen abgeschlossen'
+          ]
+        },
+        it: {
+          title: 'Storia di successo del turismo spagnolo',
+          company: 'Barcelona Hospitality Group',
+          results: [
+            'Aumento del 42% nelle conversioni di prenotazione',
+            'Risparmi mensili di €8.500 nei costi operativi',
+            'Soddisfazione del cliente migliorata del 37%',
+            'Formazione del personale completata in soli 10 giorni'
+          ]
+        }
+      }
     },
   };
   
@@ -382,6 +542,40 @@ export default function LocationPage({
             <p className="text-xl text-gray-300 mb-8">
               {content.description[validLang as keyof typeof content.description]}
             </p>
+            
+            {/* Key Stats Bar */}
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-12 mb-8">
+              <div className="bg-cyber-blue/10 border border-cyber-blue/30 p-6 text-center">
+                <div className="text-2xl font-bold text-cyber-blue mb-2">
+                  {validLang === 'en' ? '72h' : validLang === 'de' ? '72h' : '72h'}
+                </div>
+                <div className="text-gray-300">
+                  {validLang === 'en' ? 'Implementation Guarantee' : 
+                   validLang === 'de' ? 'Implementierungsgarantie' : 
+                   'Garanzia di implementazione'}
+                </div>
+              </div>
+              <div className="bg-cyber-purple/10 border border-cyber-purple/30 p-6 text-center">
+                <div className="text-2xl font-bold text-cyber-purple mb-2">
+                  {validLang === 'en' ? '0%' : validLang === 'de' ? '0%' : '0%'}
+                </div>
+                <div className="text-gray-300">
+                  {validLang === 'en' ? 'Technical Jargon' : 
+                   validLang === 'de' ? 'Technischer Jargon' : 
+                   'Gergo tecnico'}
+                </div>
+              </div>
+              <div className="bg-cyber-green/10 border border-cyber-green/30 p-6 text-center">
+                <div className="text-2xl font-bold text-cyber-green mb-2">
+                  {validLang === 'en' ? '12-Month' : validLang === 'de' ? '12-Monat' : '12-Mesi'}
+                </div>
+                <div className="text-gray-300">
+                  {validLang === 'en' ? 'ROI Guarantee' : 
+                   validLang === 'de' ? 'ROI-Garantie' : 
+                   'Garanzia ROI'}
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -404,8 +598,56 @@ export default function LocationPage({
         </div>
       </section>
       
-      {/* Services section */}
+      {/* Case Study section */}
       <section className="py-20 bg-cyber-black">
+        <div className="cyber-container">
+          <div className="max-w-4xl mx-auto">
+            <h2 className="text-3xl font-bold mb-8 text-white">
+              {validLang === 'en' ? 'Success Story' : 
+               validLang === 'de' ? 'Erfolgsgeschichte' : 
+               'Storia di successo'}
+            </h2>
+            
+            <div className="cyber-card border-cyber-purple">
+              <h3 className="text-2xl font-bold mb-4 text-white">
+                {content.caseStudy[validLang as keyof typeof content.caseStudy].title}
+              </h3>
+              <p className="text-xl text-cyber-purple mb-6">
+                {content.caseStudy[validLang as keyof typeof content.caseStudy].company}
+              </p>
+              
+              <div className="mb-6">
+                <p className="text-gray-300 mb-4">
+                  {validLang === 'en' ? 'Results achieved:' : 
+                   validLang === 'de' ? 'Erzielte Ergebnisse:' : 
+                   'Risultati raggiunti:'}
+                </p>
+                <ul className="space-y-2">
+                  {content.caseStudy[validLang as keyof typeof content.caseStudy].results.map((result: string, index: number) => (
+                    <li key={index} className="flex items-start">
+                      <div className="text-cyber-purple mr-2">✓</div>
+                      <p className="text-gray-300">{result}</p>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+              
+              <div className="bg-cyber-blue/10 border border-cyber-blue/30 p-4 rounded-sm">
+                <p className="text-gray-300 italic">
+                  {validLang === 'en' 
+                    ? '"We thought AI was only for tech companies, but grAIt.io made it accessible for our business. No technical jargon, just measurable results."' 
+                    : validLang === 'de'
+                      ? '"Wir dachten, KI sei nur für Technologieunternehmen, aber grAIt.io hat sie für unser Unternehmen zugänglich gemacht. Kein technischer Fachjargon, nur messbare Ergebnisse."'
+                      : '"Pensavamo che l\'AI fosse solo per aziende tecnologiche, ma grAIt.io l\'ha resa accessibile per la nostra azienda. Nessun gergo tecnico, solo risultati misurabili."'}
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      
+      {/* Services section */}
+      <section className="py-20 bg-cyber-darkgray">
         <div className="cyber-container">
           <div className="max-w-4xl mx-auto">
             <h2 className="text-3xl font-bold mb-8 text-white">
@@ -438,14 +680,23 @@ export default function LocationPage({
                 {ctaTitle}
               </span>
             </h2>
-            <p className="text-xl text-gray-300 mb-10">
+            <p className="text-xl text-gray-300 mb-6">
               {ctaText}
+            </p>
+            <p className="text-lg text-cyber-blue mb-10">
+              {validLang === 'en'
+                ? 'Only 3 spots left this quarter!'
+                : validLang === 'de'
+                  ? 'Nur noch 3 Plätze in diesem Quartal!'
+                  : 'Solo 3 posti rimasti questo trimestre!'}
             </p>
             <Link 
               href={`/${validLang}/contact`} 
               className="cyber-button text-lg px-8 py-4"
             >
-              {getTranslation('common.contact_us', validLang)}
+              {validLang === 'en' ? 'Book Free Assessment →' : 
+               validLang === 'de' ? 'Kostenlose Bewertung buchen →' : 
+               'Prenota valutazione gratuita →'}
             </Link>
           </div>
         </div>

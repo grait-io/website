@@ -8,54 +8,21 @@ export async function generateMetadata({ params }: { params: { lang: string } })
   const lang = supportedLanguages.includes(params.lang) ? params.lang : defaultLanguage;
   
   const title = lang === 'en' 
-    ? 'Our Services | grait.io'
+    ? 'AI Solutions That Work While You Sleep | grait.io'
     : lang === 'de'
-      ? 'Unsere Dienstleistungen | grait.io'
-      : 'I Nostri Servizi | grait.io';
+      ? 'KI-Lösungen, die arbeiten, während Sie schlafen | grait.io'
+      : 'Soluzioni AI che lavorano mentre dormi | grait.io';
   
   const description = lang === 'en'
-    ? 'Explore our AI integration, coaching, product development, and workshop services'
+    ? 'No coding required – We handle the tech so you can focus on growth'
     : lang === 'de'
-      ? 'Entdecken Sie unsere KI-Integrations-, Coaching-, Produktentwicklungs- und Workshop-Dienstleistungen'
-      : 'Esplora i nostri servizi di integrazione AI, coaching, sviluppo prodotti e workshop';
+      ? 'Keine Programmierung erforderlich – Wir kümmern uns um die Technik, damit Sie sich auf das Wachstum konzentrieren können'
+      : 'Nessuna programmazione richiesta – Gestiamo la tecnologia così puoi concentrarti sulla crescita';
   
   return {
     title,
     description,
   };
-}
-
-// Service card component
-function ServiceCard({ 
-  id, 
-  title, 
-  description, 
-  icon, 
-  lang 
-}: { 
-  id: string; 
-  title: string; 
-  description: string; 
-  icon: string;
-  lang: string;
-}) {
-  return (
-    <div className="cyber-card group hover:border-cyber-purple transition-colors duration-300">
-      <div className="text-5xl mb-6">{icon}</div>
-      <h3 className="text-2xl font-bold mb-4 text-white group-hover:text-cyber-blue transition-colors">
-        {title}
-      </h3>
-      <p className="text-gray-300 mb-6">
-        {description}
-      </p>
-      <Link 
-        href={`/${lang}/services/${id}`} 
-        className="cyber-button inline-block"
-      >
-        {getTranslation('common.learn_more', lang)}
-      </Link>
-    </div>
-  );
 }
 
 // Main services page component
@@ -69,39 +36,62 @@ export default function ServicesPage({ params }: { params: { lang: string } }) {
       : 'I Nostri Servizi';
   
   const pageSubtitle = lang === 'en'
-    ? 'Comprehensive AI solutions to transform your business'
+    ? 'AI Solutions That Work While You Sleep - Zero Technical Knowledge Required'
     : lang === 'de'
-      ? 'Umfassende KI-Lösungen zur Transformation Ihres Unternehmens'
-      : 'Soluzioni AI complete per trasformare la tua azienda';
+      ? 'KI-Lösungen, die arbeiten, während Sie schlafen - Keine technischen Kenntnisse erforderlich'
+      : 'Soluzioni AI che lavorano mentre dormi - Zero conoscenze tecniche richieste';
   
   const serviceDescriptions = {
-    ai_integration: {
-      en: 'We integrate cutting-edge AI technologies into your existing systems and workflows, automating processes and enhancing decision-making capabilities.',
-      de: 'Wir integrieren modernste KI-Technologien in Ihre bestehenden Systeme und Arbeitsabläufe, automatisieren Prozesse und verbessern die Entscheidungsfindungsfähigkeiten.',
-      it: 'Integriamo tecnologie AI all\'avanguardia nei tuoi sistemi e flussi di lavoro esistenti, automatizzando i processi e migliorando le capacità decisionali.',
+    ai_workflow: {
+      en: 'Automate 53% of repetitive tasks in your first month. Get back your Mondays and focus on growth while we handle all the technical details.',
+      de: 'Automatisieren Sie 53% der sich wiederholenden Aufgaben in Ihrem ersten Monat. Gewinnen Sie Ihre Montage zurück und konzentrieren Sie sich auf Wachstum, während wir uns um alle technischen Details kümmern.',
+      it: 'Automatizza il 53% delle attività ripetitive nel tuo primo mese. Riprendi i tuoi lunedì e concentrati sulla crescita mentre gestiamo tutti i dettagli tecnici.',
     },
-    ai_coaching: {
-      en: 'Our expert coaches guide your team through the AI transformation journey, providing training, strategy development, and implementation support.',
-      de: 'Unsere erfahrenen Coaches begleiten Ihr Team durch die KI-Transformationsreise, bieten Schulungen, Strategieentwicklung und Implementierungsunterstützung.',
-      it: 'I nostri coach esperti guidano il tuo team attraverso il percorso di trasformazione AI, fornendo formazione, sviluppo di strategie e supporto all\'implementazione.',
+    executive_mastery: {
+      en: 'Become an AI-driven leader in 6 weeks. Our executive coaching program transforms how you make decisions - no tech jargon, just measurable business results.',
+      de: 'Werden Sie in 6 Wochen ein KI-gesteuerter Leader. Unser Executive-Coaching-Programm verändert Ihre Entscheidungsfindung - kein Tech-Jargon, nur messbare Geschäftsergebnisse.',
+      it: 'Diventa un leader guidato dall\'AI in 6 settimane. Il nostro programma di coaching esecutivo trasforma il tuo modo di prendere decisioni - nessun gergo tecnico, solo risultati aziendali misurabili.',
     },
-    product_development: {
-      en: 'We help you develop innovative AI-powered products and services that create new revenue streams and competitive advantages.',
-      de: 'Wir helfen Ihnen bei der Entwicklung innovativer KI-gestützter Produkte und Dienstleistungen, die neue Einnahmequellen und Wettbewerbsvorteile schaffen.',
-      it: 'Ti aiutiamo a sviluppare prodotti e servizi innovativi basati sull\'AI che creano nuovi flussi di entrate e vantaggi competitivi.',
+    product_launchpad: {
+      en: 'Turn your ideas into revenue-generating AI tools. Launch new products 79% faster while we handle 100% of the technical complexity.',
+      de: 'Verwandeln Sie Ihre Ideen in umsatzgenerierende KI-Tools. Bringen Sie neue Produkte 79% schneller auf den Markt, während wir 100% der technischen Komplexität übernehmen.',
+      it: 'Trasforma le tue idee in strumenti AI che generano entrate. Lancia nuovi prodotti il 79% più velocemente mentre gestiamo il 100% della complessità tecnica.',
     },
-    workshops: {
-      en: 'Our hands-on workshops provide your team with the knowledge and skills needed to leverage AI technologies effectively.',
-      de: 'Unsere praktischen Workshops vermitteln Ihrem Team das Wissen und die Fähigkeiten, die für den effektiven Einsatz von KI-Technologien erforderlich sind.',
-      it: 'I nostri workshop pratici forniscono al tuo team le conoscenze e le competenze necessarie per sfruttare efficacemente le tecnologie AI.',
+    team_accelerator: {
+      en: 'Make your entire team 3x more productive. Our jargon-free training empowers everyone to use AI - no coding skills required, just business results.',
+      de: 'Machen Sie Ihr gesamtes Team 3x produktiver. Unser Jargon-freies Training befähigt jeden, KI zu nutzen - keine Programmierkenntnisse erforderlich, nur Geschäftsergebnisse.',
+      it: 'Rendi il tuo intero team 3 volte più produttivo. La nostra formazione senza gergo tecnico consente a tutti di utilizzare l\'AI - nessuna competenza di programmazione richiesta, solo risultati aziendali.',
     },
   };
   
   const serviceIcons = {
-    ai_integration: '🔄',
-    ai_coaching: '🧠',
-    product_development: '⚙️',
-    workshops: '📚',
+    ai_workflow: '💰',
+    executive_mastery: '🚀',
+    product_launchpad: '📱',
+    team_accelerator: '📈',
+  };
+  
+  const serviceStats = {
+    ai_workflow: {
+      en: '83% faster decision-making',
+      de: '83% schnellere Entscheidungsfindung',
+      it: 'Processo decisionale più rapido dell\'83%'
+    },
+    executive_mastery: {
+      en: '47% reduction in operational costs',
+      de: '47% Reduzierung der Betriebskosten',
+      it: '47% di riduzione dei costi operativi'
+    },
+    product_launchpad: {
+      en: '12.6x ROI average first year',
+      de: '12,6x ROI durchschnittlich im ersten Jahr',
+      it: '12,6x ROI medio nel primo anno'
+    },
+    team_accelerator: {
+      en: '140 staff hours/month saved',
+      de: '140 Arbeitsstunden/Monat eingespart',
+      it: '140 ore di lavoro/mese risparmiate'
+    }
   };
   
   return (
@@ -130,16 +120,69 @@ export default function ServicesPage({ params }: { params: { lang: string } }) {
       {/* Services section */}
       <section className="py-20 bg-cyber-black">
         <div className="cyber-container">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl font-bold mb-4">
+              <span className="cyber-gradient-text">
+                {lang === 'en' 
+                  ? 'AI Solutions That Work While You Sleep' 
+                  : lang === 'de'
+                    ? 'KI-Lösungen, die arbeiten, während Sie schlafen'
+                    : 'Soluzioni AI che lavorano mentre dormi'}
+              </span>
+            </h2>
+            <p className="text-xl text-gray-300 max-w-3xl mx-auto mb-4">
+              {lang === 'en'
+                ? 'Why 327 Founders Chose Us Last Quarter'
+                : lang === 'de'
+                  ? 'Warum 327 Gründer uns im letzten Quartal gewählt haben'
+                  : 'Perché 327 Fondatori Ci Hanno Scelto Nell\'Ultimo Trimestre'}
+            </p>
+            <div className="flex flex-wrap justify-center gap-4 mt-6">
+              <div className="bg-cyber-blue/10 border border-cyber-blue/30 px-4 py-2 rounded-sm">
+                <span className="text-white font-bold">
+                  {lang === 'en' ? '72h Implementation Guarantee' : 
+                   lang === 'de' ? '72h-Implementierungsgarantie' : 
+                   'Garanzia di implementazione in 72h'}
+                </span>
+              </div>
+              <div className="bg-cyber-purple/10 border border-cyber-purple/30 px-4 py-2 rounded-sm">
+                <span className="text-white font-bold">
+                  {lang === 'en' ? 'Zero Technical Jargon Policy' : 
+                   lang === 'de' ? 'Null technischer Fachjargon' : 
+                   'Politica Zero Gergo Tecnico'}
+                </span>
+              </div>
+              <div className="bg-cyber-green/10 border border-cyber-green/30 px-4 py-2 rounded-sm">
+                <span className="text-white font-bold">
+                  {lang === 'en' ? '12-Month ROI Guarantee' : 
+                   lang === 'de' ? '12-Monats-ROI-Garantie' : 
+                   'Garanzia ROI di 12 mesi'}
+                </span>
+              </div>
+            </div>
+          </div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {services.map((service) => (
-              <ServiceCard
-                key={service.id}
-                id={service.id}
-                title={getTranslation(service.translationKey, lang)}
-                description={serviceDescriptions[service.id as keyof typeof serviceDescriptions][lang as keyof typeof serviceDescriptions.ai_integration]}
-                icon={serviceIcons[service.id as keyof typeof serviceIcons]}
-                lang={lang}
-              />
+              <div key={service.id} className="cyber-card group hover:border-cyber-purple transition-colors duration-300">
+                <div className="text-5xl mb-6">{serviceIcons[service.id as keyof typeof serviceIcons]}</div>
+                <h3 className="text-2xl font-bold mb-4 text-white group-hover:text-cyber-blue transition-colors">
+                  {getTranslation(service.translationKey, lang)}
+                </h3>
+                <div className="bg-cyber-blue/10 inline-block px-3 py-1 rounded-sm mb-4">
+                  <span className="text-cyber-blue text-sm font-bold">
+                    {serviceStats[service.id as keyof typeof serviceStats][lang as keyof typeof serviceStats.ai_workflow]}
+                  </span>
+                </div>
+                <p className="text-gray-300 mb-6">
+                  {serviceDescriptions[service.id as keyof typeof serviceDescriptions][lang as keyof typeof serviceDescriptions.ai_workflow]}
+                </p>
+                <Link 
+                  href={`/${lang}/services/${service.id}`} 
+                  className="cyber-button inline-block"
+                >
+                  {getTranslation('common.learn_more', lang)}
+                </Link>
+              </div>
             ))}
           </div>
         </div>
@@ -163,10 +206,10 @@ export default function ServicesPage({ params }: { params: { lang: string } }) {
             </h2>
             <p className="text-xl text-gray-300 mb-10">
               {lang === 'en'
-                ? 'Contact us today to discuss your specific needs and how our services can help you achieve your goals.'
+                ? 'Book your free AI Readiness Assessment today. No technical knowledge required - just bring your business challenges.'
                 : lang === 'de'
-                  ? 'Kontaktieren Sie uns noch heute, um Ihre spezifischen Bedürfnisse zu besprechen und wie unsere Dienstleistungen Ihnen helfen können, Ihre Ziele zu erreichen.'
-                  : 'Contattaci oggi per discutere delle tue esigenze specifiche e di come i nostri servizi possono aiutarti a raggiungere i tuoi obiettivi.'}
+                  ? 'Buchen Sie noch heute Ihre kostenlose KI-Bereitschaftsbewertung. Keine technischen Kenntnisse erforderlich - bringen Sie einfach Ihre Geschäftsherausforderungen mit.'
+                  : 'Prenota oggi la tua valutazione gratuita di prontezza all\'AI. Non è richiesta alcuna conoscenza tecnica - porta solo le tue sfide aziendali.'}
             </p>
             <Link 
               href={`/${lang}/contact`} 

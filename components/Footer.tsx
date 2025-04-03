@@ -102,9 +102,17 @@ export default function Footer() {
           </div>
         </div>
         
-        {/* Copyright */}
+        {/* Copyright and Legal */}
         <div className="border-t border-cyber-blue/30 pt-6 mt-6 text-center text-gray-400 text-sm">
           <p>© {currentYear} grait.io. {t('footer.rights')}</p>
+          <div className="flex justify-center space-x-4 mt-2">
+            <Link href={`/${lang}/privacy-policy`} className="hover:text-cyber-blue transition-colors">
+              Privacy Policy
+            </Link>
+            <Link href={`/${lang}/terms-of-service`} className="hover:text-cyber-blue transition-colors">
+              Terms of Service
+            </Link>
+          </div>
         </div>
       </div>
     </footer>
