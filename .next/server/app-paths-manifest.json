@@ -1,1 +1,12 @@
-{}
+{
+  "/_not-found/page": "app/_not-found/page.js",
+  "/page": "app/page.js",
+  "/favicon.ico/route": "app/favicon.ico/route.js",
+  "/[lang]/locations/page": "app/[lang]/locations/page.js",
+  "/[lang]/contact/page": "app/[lang]/contact/page.js",
+  "/[lang]/page": "app/[lang]/page.js",
+  "/[lang]/services/page": "app/[lang]/services/page.js",
+  "/[lang]/services/[id]/[locationId]/page": "app/[lang]/services/[id]/[locationId]/page.js",
+  "/[lang]/locations/[id]/page": "app/[lang]/locations/[id]/page.js",
+  "/[lang]/services/[id]/page": "app/[lang]/services/[id]/page.js"
+}
