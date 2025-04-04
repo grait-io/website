@@ -1,7 +1,7 @@
-{
-  "name": "grait.io",
+fix{
+  "name": "grait-io",
   "compatibility_date": "2025-04-03",
   "assets": {
-    "directory": "./out"
+    "directory": "./public"
   }
 }
