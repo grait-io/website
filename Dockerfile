@@ -1,24 +1,10 @@
-FROM node:20-alpine AS builder
-
+FROM node:22-alpine
 WORKDIR /app
-
-# Install dependencies first
-COPY package.json package-lock.json ./
-RUN npm install -g npm@latest && npm ci
-
-# Copy app files
-COPY . .
-
-# Build the app
-RUN npm run build
-
-FROM node:20-alpine
-WORKDIR /app
-
-COPY --from=builder /app/.next/standalone ./
-COPY --from=builder /app/.next/static ./.next/static
-COPY --from=builder /app/public ./public
-
-EXPOSE 3000
-
+COPY package.json server.js ./
+COPY scripts ./scripts
+COPY static ./static
+ENV NODE_ENV=production
+ENV PORT=8080
+EXPOSE 8080
+HEALTHCHECK --interval=30s --timeout=3s --start-period=5s --retries=3 CMD wget -qO- http://127.0.0.1:8080/healthz || exit 1
 CMD ["node", "server.js"]

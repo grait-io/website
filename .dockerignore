@@ -1,12 +1,4 @@
-node_modules
-.next
-dist
-.DS_Store
-*.md
 .git
-.gitignore
-.vscode
-.env.local
-.env.development
-.env.test
-.env.production
+node_modules
+npm-debug.log
+.DS_Store
